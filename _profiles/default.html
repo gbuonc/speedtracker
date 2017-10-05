@@ -3,7 +3,7 @@
 # The human-friendly name of the profile. Whenever you're asked for the profile
 # ID, it refers to the name of the profile file — in this case, "default".
 #
-name: "ifq"
+name: "Il Fatto Quotidiano - esempio articolo"
 
 #
 # The default profile will be the one shown when accessing the root URL of your
@@ -22,10 +22,15 @@ interval: 12
 # WebPageTest test parameters
 #
 parameters:
-  connectivity: "Cable"
-  location: "ec2-eu-central-1:Chrome"
-  runs: 1
-  url: "https://www.ilfattoquotidiano.it"
+connectivity: "3G"
+location: "ec2-eu-west-1:Chrome"
+runs: 5
+firstViewOnly:true
+emulateMobile:true
+timeline:true
+blockAds:true
+pageSpeed:true
+url: "http://www.ilfattoquotidiano.it/2017/10/04/referendum-catalogna-puigdemont-giorni-proclamiamo-lindipendenza-unilaterale-madrid-reagiremo-il-capo-dei-mossos-indagato-per-sedizione/3893742/"
 
 #
 # Performance budgets are defined with a metric id, a max/min allowed value
