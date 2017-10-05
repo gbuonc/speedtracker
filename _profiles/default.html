@@ -3,7 +3,7 @@
 # The human-friendly name of the profile. Whenever you're asked for the profile
 # ID, it refers to the name of the profile file — in this case, "default".
 #
-name: "Il Fatto Quotidiano - esempio articolo"
+name: "Evoluzione"
 
 #
 # The default profile will be the one shown when accessing the root URL of your
@@ -22,7 +22,9 @@ interval: 12
 # WebPageTest test parameters
 #
 parameters:
-url: "http://www.ilfattoquotidiano.it/2017/10/04/referendum-catalogna-puigdemont-giorni-proclamiamo-lindipendenza-unilaterale-madrid-reagiremo-il-capo-dei-mossos-indagato-per-sedizione/3893742/"
+  connectivity: "Cable"
+  runs: 1
+  url: "http://www.evoluzionetelematica.it"
 
 #
 # Performance budgets are defined with a metric id, a max/min allowed value
@@ -33,13 +35,16 @@ url: "http://www.ilfattoquotidiano.it/2017/10/04/referendum-catalogna-puigdemont
 #
 # https://github.com/speedtracker/speedtracker-api/blob/master/lib/SpeedTracker.js#L18-L37
 #
-#budgets:
-#  -
-#    metric: TTFB
-#    max: 600
-#    alerts: ["emailAlert", "slackAlert"]
-#  -
-#    metric: firstPaint
-#    max: 2000
-#    alerts: ["slackAlert"]
+budgets:
+  -
+    metric: TTFB
+    max: 800
+    alerts: ["emailAlert"]
+  -
+    metric: firstPaint
+    max: 2000
+    alerts: ["emailAlert"]
+  -
+    metric: fullyLoaded
+    max: 5000
 ---
